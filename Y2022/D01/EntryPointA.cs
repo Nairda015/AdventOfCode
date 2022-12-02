@@ -12,21 +12,7 @@ public class EntryPointA : IEntryPoint
     
     public static string Calculate(string[] input)
     {
-        var groups = new List<List<int>>();
-        var rowNumber = 0;
-        while (rowNumber < input.Length)
-        {
-            var group = input
-                .Skip(rowNumber)
-                .TakeWhile(x => x != string.Empty)
-                .Select(int.Parse)
-                .ToList();
-            groups.Add(group);
-            rowNumber += group.Count + 1;
-        }
-
-        var max = groups.Select(x => x.Sum()).Max();
-        return max.ToString();
+        return string.Empty;
     }
     
     public static string[] ReadFile() => 
