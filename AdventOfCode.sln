@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Y2022", "Y2022\Y2022.csproj", "{C7924D87-96B6-461A-BD92-20ED1E11BFF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Y2022.Tests", "Y2022.Tests\Y2022.Tests.csproj", "{689C98CB-696C-4BE7-99F1-F2749376D628}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SF", "SF", "{71EAD932-2355-4CB7-9C12-1889C39C75FC}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7924D87-96B6-461A-BD92-20ED1E11BFF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7924D87-96B6-461A-BD92-20ED1E11BFF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7924D87-96B6-461A-BD92-20ED1E11BFF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7924D87-96B6-461A-BD92-20ED1E11BFF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{689C98CB-696C-4BE7-99F1-F2749376D628}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{689C98CB-696C-4BE7-99F1-F2749376D628}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{689C98CB-696C-4BE7-99F1-F2749376D628}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{689C98CB-696C-4BE7-99F1-F2749376D628}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,9 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=776f7ef7_002Db3e8_002D4884_002D8236_002D02e30e6dc65c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Calculate_ShouldReturnResultFromChallengerDescription" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::689C98CB-696C-4BE7-99F1-F2749376D628::net7.0::R2022.Tests.D02.EntryPointATests.Calculate_ShouldReturnResultFromChallengerDescription&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::689C98CB-696C-4BE7-99F1-F2749376D628::net7.0::R2022.Tests.D02.EntryPointBTests.Calculate_ShouldReturnResultFromChallengerDescription&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::689C98CB-696C-4BE7-99F1-F2749376D628::net7.0::R2022.Tests.D02.EntryPointBTests&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=adrianfranczak/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>
