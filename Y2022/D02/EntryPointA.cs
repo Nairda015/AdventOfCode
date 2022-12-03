@@ -6,11 +6,11 @@ public class EntryPointA : IEntryPoint
     public static void Run()
     {
         var input = ReadFile();
-        var result = Calculate(input);
+        var result = Solve(input);
         Console.WriteLine(result);
     }
 
-    public static string Calculate(string[] input)
+    public static string Solve(string[] input)
     {
         var result = input.Sum(CountScore);
         return result.ToString();

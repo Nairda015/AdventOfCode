@@ -17,7 +17,7 @@ public class EntryPointATests : IEntryPointTest
         };
         
         // Act
-        var result = EntryPointA.Calculate(input);
+        var result = EntryPointA.Solve(input);
 
         // Assert
         Assert.Equal("15", result);
