@@ -12,9 +12,18 @@ public class EntryPointB : IEntryPoint
 
     public static string Solve(string[] input)
     {
-        return string.Empty;
+        var count = 0;
+        var sections = input.Select(pair => pair.Split(",", 2));
+        foreach (var pair in sections)
+        {
+            var section = new SectionRange(pair[0]);
+            var range = new SectionRange(pair[1]).GetRange();
+            if (range.Any(x => section.Contains(x))) count++;
+        }
+
+        return count.ToString();
     }
-    
-    public static string[] ReadFile() =>
+
+    public static string[] ReadFile() => 
         File.ReadAllLines("/Users/adrianfranczak/Repos/Private/AoC/Y2022/D04/input.txt");
 }

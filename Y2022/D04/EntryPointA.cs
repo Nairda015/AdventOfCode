@@ -12,10 +12,14 @@ public class EntryPointA : IEntryPoint
 
     public static string Solve(string[] input)
     {
-        return string.Empty;
+        var count = input
+            .Select(pair => pair.Split(",", 2))
+            .Select(parts => SectionRange.IsOverlapping(new SectionRange(parts[0]), new SectionRange(parts[1])))
+            .Sum();
+
+        return count.ToString();
     }
-    
+
     public static string[] ReadFile() => 
         File.ReadAllLines("/Users/adrianfranczak/Repos/Private/AoC/Y2022/D04/input.txt");
 }
-
