@@ -19,7 +19,7 @@ public class EntryPointATests : IEntryPointTest
             "2-6,4-8",
         };
         // Act
-        var result = EntryPointA.Solve(input);
+        var result = ArrayEntryPointA.Solve(input);
 
         // Assert
         Assert.Equal("2", result);

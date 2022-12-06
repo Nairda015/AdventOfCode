@@ -27,7 +27,7 @@ public class EntryPointBTests : IEntryPointTest
             "10000",
         };
         // Act
-        var result = EntryPointB.Solve(input);
+        var result = ArrayEntryPointB.Solve(input);
 
         // Assert
         Assert.Equal("45000", result);

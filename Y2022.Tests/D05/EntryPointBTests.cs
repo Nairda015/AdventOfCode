@@ -22,7 +22,7 @@ public class EntryPointBTests : IEntryPointTest
             "move 1 from 1 to 2",
         };
         // Act
-        var result = EntryPointB.Solve(input);
+        var result = ArrayEntryPointB.Solve(input);
 
         // Assert
         Assert.Equal("MCD", result);

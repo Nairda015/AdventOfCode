@@ -19,7 +19,7 @@ public class EntryPointATests : IEntryPointTest
             "CrZsJsPPZsGzwwsLwLmpwMDw",
         };
         // Act
-        var result = EntryPointA.Solve(input);
+        var result = ArrayEntryPointA.Solve(input);
 
         // Assert
         Assert.Equal("157", result);

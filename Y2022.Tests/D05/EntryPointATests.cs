@@ -22,7 +22,7 @@ public class EntryPointATests : IEntryPointTest
             "move 1 from 1 to 2",
         };
         // Act
-        var result = EntryPointA.Solve(input);
+        var result = ArrayEntryPointA.Solve(input);
 
         // Assert
         Assert.Equal("CMZ", result);
