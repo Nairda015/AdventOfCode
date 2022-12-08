@@ -21,6 +21,6 @@ public class EntryPointBTests : IEntryPointTest
         var result = ArrayEntryPointB.Solve(input);
 
         // Assert
-        Assert.Equal(1, 1);
+        Assert.Equal("8", result);
     }
 }
