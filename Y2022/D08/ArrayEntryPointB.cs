@@ -1,4 +1,4 @@
-using System.Diagnostics;
+using Y2022.CommonModels;
 
 namespace Y2022.D08;
 
@@ -86,58 +86,4 @@ public class ArrayEntryPointB : IArrayEntryPoint
 
     public static string[] ReadFile() =>
         File.ReadAllLines("/Users/adrianfranczak/Repos/Private/AoC/Y2022/D08/input.txt");
-}
-
-internal class Map2D<T>
-{
-    public required T[,] Value { get; set; }
-    public int Width => Value.GetLength(0);
-    public int Height => Value.GetLength(1);
-    public T CurrentItem => Value[CurrentPosition.X, CurrentPosition.Y];
-    public (int X, int Y) CurrentPosition { get; set; } = (0, 0);
-
-
-    public T Move(Vector2D direction)
-    {
-        var newPosition = (CurrentPosition.X + direction.X, CurrentPosition.Y + direction.Y);
-        if (IsOutsideMap(newPosition)) throw new UnreachableException("Cannot move outside of map");
-        CurrentPosition = newPosition;
-        return CurrentItem;
-    }
-    
-    public bool CanMove(Vector2D direction)
-    {
-        var newPosition = (CurrentPosition.X + direction.X, CurrentPosition.Y + direction.Y);
-        return !IsOutsideMap(newPosition);
-    }
-
-    private bool IsOutsideMap((int X, int Y) position) =>
-        position.X < 0
-        || position.X >= Width
-        || position.Y < 0
-        || position.Y >= Height;
-}
-
-internal record struct Vector2D
-{
-    private bool IsHorizontal => Y is 0;
-
-    private Vector2D(int lenght, bool isHorizontal)
-    {
-        if (isHorizontal) X = lenght;
-        else Y = lenght;
-    }
-
-    public static Vector2D CreateHorizontal(int lenght) => new(lenght, true);
-    public static Vector2D CreateVertical(int lenght) => new(lenght, false);
-
-    public int X { get; }
-    public int Y { get; }
-
-    public Vector2D Normalize()
-    {
-        return IsHorizontal
-            ? CreateHorizontal(X / Math.Abs(X))
-            : CreateVertical(Y / Math.Abs(Y));
-    }
 }

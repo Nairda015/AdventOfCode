@@ -25,8 +25,6 @@ public class ArrayEntryPointA : IArrayEntryPoint
         CheckFromTop(input, visibilities, highestFromTop);
         CheckFromBottom(input, visibilities, highestFromBottom);
 
-        
-        
         var result =  visibilities.LongLength - CountInvisible(visibilities);
         return result.ToString();
     }
