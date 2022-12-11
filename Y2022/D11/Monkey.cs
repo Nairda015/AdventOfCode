@@ -2,7 +2,7 @@ namespace Y2022.D11;
 
 internal class Monkey
 {
-    public static int Lcm = 0;
+    public static int LeastCommonMultiple = 0;
     
     private readonly Queue<long> _items;
     private readonly Func<long, long> _operation;
@@ -30,7 +30,7 @@ internal class Monkey
     public (int id, long item) ThrowItem(bool shouldDecreaseWorryLevel)
     {
         var item = _items.Dequeue();
-        item = _operation(item) % Lcm;
+        item = _operation(item) % LeastCommonMultiple;
         NumberOfInspections++;
         if (shouldDecreaseWorryLevel)
         {
@@ -44,25 +44,5 @@ internal class Monkey
     public void ReceiveItem(long item)
     {
         _items.Enqueue(item);
-    }
-}
-
-internal static class MathHelpers
-{
-    private static int Gfc(int a, int b)
-    {
-        while (b != 0)
-        {
-            var temp = b;
-            b = a % b;
-            a = temp;
-        }
-
-        return a;
-    }
-
-    public static int Lcm(int a, int b)
-    {
-        return a / Gfc(a, b) * b;
     }
 }

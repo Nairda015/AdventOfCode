@@ -1,4 +1,4 @@
-using System.Diagnostics;
+using Y2022.CommonModels;
 
 namespace Y2022.D11;
 
@@ -16,8 +16,8 @@ public class ArrayEntryPointA : IArrayEntryPoint
     {
         var groups = input.Chunk(7).ToArray();
         var monkeys = groups.Select(ParseInput).ToArray();
-        Monkey.Lcm = monkeys.Select(x => x.TestValue).Aggregate(MathHelpers.Lcm);
-
+        Monkey.LeastCommonMultiple = monkeys.Select(x => x.TestValue).LeastCommonMultiple();
+        
         for (var i = 0; i < 20; i++)
         {
             foreach (var monkey in monkeys)
