@@ -7,11 +7,9 @@ public class ArrayEntryPointB : IArrayEntryPoint
     // Cause .NET can run static parameterless methods without main
     public static void Run()
     {
-        var sw = Stopwatch.StartNew();
         var input = ReadFile();
         var result = Solve(input);
         Console.WriteLine(result);
-        Console.WriteLine(sw.ElapsedMilliseconds);
     }
 
     
@@ -19,8 +17,9 @@ public class ArrayEntryPointB : IArrayEntryPoint
     {
         var groups = input.Chunk(7).ToArray();
         var monkeys = groups.Select(ParseInput).ToArray();
-
-        for (var i = 0; i < 1_000; i++)
+        Monkey.Lcm = monkeys.Select(x => x.TestValue).Aggregate(MathHelpers.Lcm);
+        
+        for (var i = 0; i < 10_000; i++)
         {
             foreach (var monkey in monkeys)
             {
@@ -82,7 +81,7 @@ public class ArrayEntryPointB : IArrayEntryPoint
         return new Monkey(
             queue,
             operation,
-            x => x % int.Parse(testAsString) is 0,
+            int.Parse(testAsString),
             idIfTrue,
             idIfFalse);
 

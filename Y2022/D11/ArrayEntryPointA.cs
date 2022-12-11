@@ -16,6 +16,7 @@ public class ArrayEntryPointA : IArrayEntryPoint
     {
         var groups = input.Chunk(7).ToArray();
         var monkeys = groups.Select(ParseInput).ToArray();
+        Monkey.Lcm = monkeys.Select(x => x.TestValue).Aggregate(MathHelpers.Lcm);
 
         for (var i = 0; i < 20; i++)
         {
@@ -79,7 +80,7 @@ public class ArrayEntryPointA : IArrayEntryPoint
         return new Monkey(
             queue,
             operation,
-            x => x % int.Parse(testAsString) is 0,
+            int.Parse(testAsString),
             idIfTrue,
             idIfFalse);
 
