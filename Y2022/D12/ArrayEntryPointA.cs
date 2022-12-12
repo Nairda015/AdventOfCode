@@ -1,3 +1,4 @@
+using System.Text;
 using Y2022.CommonModels;
 
 namespace Y2022.D12;
@@ -55,9 +56,28 @@ public class ArrayEntryPointA : IArrayEntryPoint
             var newPositionCoordinates = position.Move(direction);
             if (VisitedPlaces.ContainsKey(newPositionCoordinates)) continue;
             var newPosition = Map.Value[newPositionCoordinates.X, newPositionCoordinates.Y];
-            if (newPosition > ++currentPositionHeight) continue;
+            if (newPosition > currentPositionHeight + 1) continue;
             CurrentPosition.Add(newPositionCoordinates);
             VisitedPlaces.Add(newPositionCoordinates, currentDistance + 1);
+        }
+    }
+
+    private static void PrintVisitedPlaces()
+    {
+        var sb = new StringBuilder();
+        for (var i = 0; i < Map.Height; i++)
+        {
+            for (var j = 0; j < Map.Width; j++)
+            {
+                var position = new Point2D(i, j);
+                if (VisitedPlaces.TryGetValue(position, out var value))
+                {
+                    sb.Append(value);
+                }
+                sb.Append(';');
+            }
+            Console.WriteLine(sb.ToString());
+            sb.Clear();
         }
     }
 
@@ -84,13 +104,13 @@ public class ArrayEntryPointA : IArrayEntryPoint
         {
             CurrentPosition.Add(new Point2D(j, i));
             VisitedPlaces.Add(new Point2D(j, i), 0);
-            return -1;
+            return 0;
         }
 
         int InitializeEnd(int i, int j)
         {
             EndPosition = new Point2D(j, i);
-            return 26;
+            return 25;
         }
     }
 
