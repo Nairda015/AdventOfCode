@@ -8,6 +8,7 @@ public class EntryPointATests : IEntryPointTest
     [Fact]
     public void Calculate_ShouldReturnResultFromChallengerDescription()
     {
+        // Arrange
         var input = new[]
         {
             "Monkey 0:",

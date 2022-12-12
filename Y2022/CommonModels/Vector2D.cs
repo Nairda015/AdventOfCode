@@ -29,9 +29,3 @@ internal readonly record struct Vector2D
             : CreateVertical(Y / Math.Abs(Y));
     }
 }
-
-internal readonly record struct Point2D(int X, int Y)
-{
-
-    public Point2D Move(Vector2D vector) => new(X + vector.X, Y + vector.Y);
-} 
