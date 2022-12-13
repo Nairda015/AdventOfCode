@@ -1,11 +1,11 @@
 namespace Y2022.D13;
 
-public abstract class Node
+internal abstract class Node
 {
     public abstract override string ToString();
 }
 
-public class IntNode : Node
+internal class IntNode : Node
 {
     public int Val { get; set; }
 
@@ -15,7 +15,7 @@ public class IntNode : Node
     }
 }
 
-public class ListNode : Node
+internal class ListNode : Node
 {
     public List<Node> Val { get; set; }
 
@@ -25,7 +25,7 @@ public class ListNode : Node
     }
 }
 
-public static class NodeHelper
+internal static class NodeHelper
 {
     public static Node Parse(ReadOnlySpan<char> input)
     {
