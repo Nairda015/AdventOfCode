@@ -12,10 +12,23 @@ public class ArrayEntryPointA : IArrayEntryPoint
 
     public static string Solve(string[] input)
     {
-        return string.Empty;
+        var sum = 0;
+        var pairs = 1;
+        var i = 0;
+        while (i < input.Length)
+        {
+            var left = NodeHelper.Parse(input[i++]);
+            var right = NodeHelper.Parse(input[i++]);
+
+            if (NodeHelper.Compare(left, right) == -1) sum += pairs;
+
+            i++;
+            pairs++;
+        }
+
+        return sum.ToString();
     }
 
-    public static string[] ReadFile() => 
+    public static string[] ReadFile() =>
         File.ReadAllLines("/Users/adrianfranczak/Repos/Private/AoC/Y2022/D13/input.txt");
 }
-

@@ -1,8 +1,7 @@
-namespace Y2022.D12;
-
 using System.Text;
 using Y2022.CommonModels;
 
+namespace Y2022.D12;
 
 public class ArrayEntryPointB : IArrayEntryPoint
 {
@@ -10,6 +9,7 @@ public class ArrayEntryPointB : IArrayEntryPoint
     private static readonly Dictionary<Point2D, int> VisitedPlaces = new();
     private static Point2D EndPosition;
     private static ArrayMap2D<int> Map;
+
     private static readonly Vector2D[] Directions =
     {
         Vector2D.CreateHorizontal(1),
@@ -17,7 +17,7 @@ public class ArrayEntryPointB : IArrayEntryPoint
         Vector2D.CreateVertical(1),
         Vector2D.CreateVertical(-1)
     };
-    
+
     // Cause .NET can run static parameterless methods without main
     public static void Run()
     {
@@ -30,8 +30,8 @@ public class ArrayEntryPointB : IArrayEntryPoint
     {
         var betterInput = ParseToMap(input);
         Map = new ArrayMap2D<int> { Value = betterInput };
-        
-        while (!VisitedPlaces.ContainsKey(EndPosition) )
+
+        while (!VisitedPlaces.ContainsKey(EndPosition))
         {
             var currentPositionCopy = CurrentPosition.ToList();
             for (var i = 0; i < currentPositionCopy.Count; i++)
@@ -74,8 +74,10 @@ public class ArrayEntryPointB : IArrayEntryPoint
                 {
                     sb.Append(value);
                 }
+
                 sb.Append(';');
             }
+
             Console.WriteLine(sb.ToString());
             sb.Clear();
         }
@@ -92,7 +94,7 @@ public class ArrayEntryPointB : IArrayEntryPoint
                 map[j, i] = value switch
                 {
                     'S' => InitializeStart(i, j),
-                    'a'=> InitializeStart(i, j),
+                    'a' => InitializeStart(i, j),
                     'E' => InitializeEnd(i, j),
                     _ => value - 'a'
                 };
