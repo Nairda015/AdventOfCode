@@ -17,8 +17,8 @@ internal readonly record struct Vector2D
     public static Vector2D CreateFormPoints(Point2D p1, Point2D p2)
         => new(p1.X - p2.X, p1.Y - p2.Y);
 
-    public int X { get; }
-    public int Y { get; }
+    public int X { get; init; }
+    public int Y { get; init; }
     
     public int Length => Math.Abs(X) + Math.Abs(Y);
 
