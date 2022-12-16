@@ -15,8 +15,7 @@ public class ArrayEntryPointA : IArrayEntryPoint
         var columns = input.TakeWhile(x => x != "").ToArray();
         var stacks = ConvertColumnsToStacks(columns);
 
-        var orders = input
-            .SkipWhile(x => x != "")
+        var orders = input.SkipWhile(x => x != "")
             .Skip(1)
             .Select(x => x.Split(' '))
             .Select(x => new Order(x[1], x[3], x[5]));
